@@ -6,7 +6,11 @@ module.exports = function (app) {
       res.json(dbWorkouts)
     })
   })
-
+  app.get("/api/workouts/range", function (req, res) {
+    db.Workout.find({}).then(function (dbWorkouts) {
+      res.json(dbWorkouts)
+    })
+  })
   app.put("/api/workouts/:id", function (req, res) {
     db.Workout.update({ _id: req.params.id }, { $push: { "exercises": req.body } }).then(function (dbWorkouts) {
       res.json(dbWorkouts)
