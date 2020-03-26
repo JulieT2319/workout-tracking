@@ -11,8 +11,8 @@ fetch("/api/workouts/range")
 
 API.getWorkoutsInRange()
 
-  function generatePalette() {
-    const arr = [
+function generatePalette() {
+  const arr = [
     "#003f5c",
     "#2f4b7c",
     "#665191",
@@ -32,7 +32,7 @@ API.getWorkoutsInRange()
   ]
 
   return arr;
-  }
+}
 function populateChart(data) {
   let durations = duration(data);
   let pounds = calculateTotalWeight(data);
@@ -48,13 +48,13 @@ function populateChart(data) {
     type: "line",
     data: {
       labels: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
+        "Exercise A",
+        "Exercise B",
+        "Exercise C",
+        "Exercise D",
+        "Exercise E",
+        "Exercise F",
+        "Exercise G"
       ],
       datasets: [
         {
@@ -96,13 +96,13 @@ function populateChart(data) {
     type: "bar",
     data: {
       labels: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
+        "Exercise A",
+        "Exercise B",
+        "Exercise C",
+        "Exercise D",
+        "Exercise E",
+        "Exercise F",
+        "Exercise G"
       ],
       datasets: [
         {
@@ -218,6 +218,6 @@ function workoutNames(data) {
       workouts.push(exercise.name);
     });
   });
-  
+
   return workouts;
 }
